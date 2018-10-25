@@ -7,8 +7,8 @@ RUN echo 'force-unsafe-io' | tee /etc/dpkg/dpkg.cfg.d/02apt-speedup && \
     echo 'Acquire::http {No-Cache=True;};' | tee /etc/apt/apt.conf.d/no-http-cache
 
 # We need backport repo to get recent cmake version
-RUN echo "deb http://httpredir.debian.org/debian jessie-backports main non-free" > /etc/apt/sources.list.d/backports.list && \
-    echo "deb-src http://httpredir.debian.org/debian jessie-backports main non-free" >> /etc/apt/sources.list.d/backports.list && \
+RUN echo "deb http://mirrors.163.com/debian jessie-backports main non-free" > /etc/apt/sources.list.d/backports.list && \
+    echo "deb-src http://mirrors.163.com/debian jessie-backports main non-free" >> /etc/apt/sources.list.d/backports.list && \
     apt-get update && \
     apt-get install -y \
         build-essential \
